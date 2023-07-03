@@ -1,4 +1,6 @@
 // app/javascript/helpers/helpers.js
+import { error } from './notifications';
+
 export const isEmptyObject = obj => Object.keys(obj).length === 0;
 
 export const validateEvent = (event) => {
@@ -33,4 +35,9 @@ export const formatDate = (d) => {
   const DD = `0${d.getDate()}`.slice(-2);
 
   return `${YYYY}-${MM}-${DD}`;
+};
+
+export const handleAjaxError = (err) => {
+  error('Something went wrong');
+  console.error(err);
 };

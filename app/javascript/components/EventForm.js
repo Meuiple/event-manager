@@ -4,8 +4,9 @@ import { useParams, Link } from 'react-router-dom';
 import Pikaday from 'pikaday';
 import 'pikaday/css/pikaday.css';
 import { formatDate, isEmptyObject, validateEvent } from '../helpers/helpers';
+import PropTypes from 'prop-types';
 
-const EventForm = () => {
+const EventForm = ({onSave}) => {
   const [event, setEvent] = useState({
     event_type: '',
     event_date: '',
@@ -99,7 +100,7 @@ const EventForm = () => {
     if (!isEmptyObject(errors)) {
       setFormErrors(errors);
     } else {
-      console.log(event);
+      onSave(event);
     }
   };
 
@@ -191,3 +192,7 @@ const EventForm = () => {
 
 
 export default EventForm;
+
+EventForm.propTypes = {
+  onSave: PropTypes.func.isRequired,
+};
