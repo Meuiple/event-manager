@@ -1,2 +1,4 @@
+# app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
-end
+    protect_from_forgery with: :null_session
+  end

@@ -1,4 +1,12 @@
 // app/javascript/components/App.js
 import React from 'react';
-const HelloMessage = ({ name }) => <h1>Hello, {name}!</h1>;
-export default HelloMessage;
+import { Routes, Route } from 'react-router-dom';
+import Editor from './Editor';
+
+const App = () => (
+  <Routes>
+    <Route path="events/*" element={<Editor />} />
+  </Routes>
+);
+
+export default App;
