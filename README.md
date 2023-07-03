@@ -30,5 +30,5 @@ rails -v                                                                        
 
 * ...
 
-url
-https://techracho.bpsinc.jp/hachi8833/2022_05_26/118202#5
+url  
+<https://techracho.bpsinc.jp/hachi8833/2022_05_26/118202#5>
