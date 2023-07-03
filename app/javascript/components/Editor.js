@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import EventList from './EventList';
 import Event from './Event';
+import EventForm from './EventForm';
 
 const Editor = () => {
   const [events, setEvents] = useState([]);
@@ -30,19 +31,21 @@ const Editor = () => {
 
   return (
     <>
-      <Header />
-      {isError && <p>Something went wrong. Check the console.</p>}
-
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
+    <Header />
+    <div className="grid">
+        {isError && <p>Something went wrong. Check the console.</p>}
+        {isLoading ? (
+            <p className='loading'>Loading...</p>
+        ) : (
         <>
-          <EventList events={events} />
-          <Routes>
-            <Route path=":id" element={<Event events={events} />} />
-          </Routes>
+            <EventList events={events} />
+            <Routes>
+                <Route path="new" element={<EventForm />} />
+                <Route path=":id" element={<Event events={events} />} />
+            </Routes>
         </>
-      )}
+        )}
+    </div>
     </>
   );
 };

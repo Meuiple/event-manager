@@ -16,6 +16,9 @@
   "esbuild": "^0.18.11",
   
     
+  "pikaday": "^1.8.2",
+  
+    
   "prop-types": "^15.8.1",
   
     
@@ -36,7 +39,8 @@
   
     
   "watch": "esbuild app/javascript/*.* --watch --bundle --outdir=app/assets/builds --loader:.js=jsx",
-
+  
+    
   "lint": "eslint app/javascript"
   
   },
